@@ -12,7 +12,7 @@ function show_card() { // 포스터 카드를 불러오기 위한 함수입니�
         .then(response => response.json())
         .then(data => {
             let rows = data['results']
-            rows.forEach((a) => { // URL에서 가져온 정보를 새로운 데이터영역인 함수 a에 배열시켰습니다
+            rows.forEach((a) => { // URL에서 가져온 데이터 값을 새로운 데이터영역인 함수 a에 배열시켰습니다
                 let title = a['title'];
                 let vote_average = a['vote_average'];
                 let overview = a['overview'];
@@ -45,13 +45,13 @@ function search() {    // 검색 기능을 활성화 하기 위한 함수입니�
         .then(data => {
             let searchString = document.querySelector("#search-input").value // 문서의 id값 search-input을 찾아내어 값을 반환시킵니다.
             let rows = data['results']
-            document.getElementById("card-list").innerHTML = "" // 입력한 값에 대한 정보 값을 제외하고 공백처리 하였습니다.
+            document.getElementById("card-list").innerHTML = "" // 입력한 값에 대한 정보 값(card-list)을 제외하고 공백처리 하기 위한 것입니다.
             rows.forEach((a) => {
                 let title = a['title'];
                 let vote_average = a['vote_average'];
                 let overview = a['overview'];
                 let id = a['id'];
-                let poster_path = "https://image.tmdb.org/t/p/w300" + a['poster_path']
+                let poster_path = "https://image.tmdb.org/t/p/w500" + a['poster_path']
                 let temp_html = `<div class = "movie-card">
                                 <div class="card-body" onclick = 'alert("영화 ID : ${id}")' >
                                     <img src="${poster_path}"
