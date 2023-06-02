@@ -1,3 +1,5 @@
+// 팀원분께서 도와주셔서 완전히 제가 다 한 것은 아니지만 최대한 이해하고 넘어간 부분이 대부분이라고 생각됩니다.
+
 function show_card() { // 포스터 카드를 불러오기 위한 함수입니다.
     const options = {
         method: 'GET',
@@ -30,7 +32,7 @@ function show_card() { // 포스터 카드를 불러오기 위한 함수입니�
             });
         });
 };
-function search() {    // 검색창을 활성화 하기 위한 함수입니다.
+function search() {    // 검색 기능을 활성화 하기 위한 함수입니다.
     const options = {
         method: 'GET',
         headers: {
@@ -43,7 +45,7 @@ function search() {    // 검색창을 활성화 하기 위한 함수입니다.
         .then(data => {
             let searchString = document.querySelector("#search-input").value // 문서의 id값 search-input을 찾아내어 값을 반환시킵니다.
             let rows = data['results']
-            document.getElementById("card-list").innerHTML = "" // 입력한 값에 대한 정보를 제외하고 공백처리 하였습니다.
+            document.getElementById("card-list").innerHTML = "" // 입력한 값에 대한 정보 값을 제외하고 공백처리 하였습니다.
             rows.forEach((a) => {
                 let title = a['title'];
                 let vote_average = a['vote_average'];
