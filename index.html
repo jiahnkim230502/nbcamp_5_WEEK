@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내일배움캠프 개인과제</title>
+    <style>
+
+        .top_title {
+            width: 1000px;
+            height: 100px;
+            margin: 50px auto auto auto;
+            text-align: center;
+        }
+
+        .search {
+            width: 1000px;
+            height: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .search>label {
+            font-size: 26px;
+        }
+
+        .search>input {
+            height: 30px;
+        }
+
+        .search>button {
+            height: 30px;
+        }
+
+        .card-list {
+            width: 2500px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+
+            display: flex;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .movie-card {
+            background-color: aqua;
+            width: 280px;
+            height: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 500px;
+        }
+    </style>
+</head>
+<body onload="show_card()">
+    <header class="title_bgrnd">
+        <h1 class="top_title">내배캠 최고 평점 영화 콜렉션</h1>
+    </header>
+    <div class="search">
+        <label>영화 검색 : </label>
+        <input type="text" id="search-input" placeholder="영화 제목을 검색해 보세요">
+        <button type="submit" id="search-btn" onclick="search()">검색</button>
+    </div>
+    <div class="card-list" id="card-list"></div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
