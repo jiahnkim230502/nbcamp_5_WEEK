@@ -48,6 +48,7 @@ function search() {    // 검색 기능을 활성화 하기 위한 함수입니�
             document.getElementById("card-list").innerHTML = "" // 입력한 값에 대한 정보 값(card-list)을 제외하고 공백처리 하기 위한 것입니다.
             rows.forEach((a) => {
                 let title = a['title'];
+                let searchTitle = title.toUpperCase()
                 let vote_average = a['vote_average'];
                 let overview = a['overview'];
                 let id = a['id'];
@@ -61,9 +62,10 @@ function search() {    // 검색 기능을 활성화 하기 위한 함수입니�
                                                     <p class = "vote_average">★ ${vote_average}</p>
                                                     <p class="overview">${overview}</p>
                                 </div>`
-                if (searchString == title) {
-                    document.getElementById("card-list").insertAdjacentHTML('beforeend', temp_html); // 문서의 id값 card-list에 관련된 태그를 찾아내어 temp_html을 삽입합니다. 여기에 검색 결과에 대한 값이 삽입됩니다
-                };
+                // 문자열이 포함되어있으면 검색되도록 고도화 시켜 보세요~ (Issue #1)
+                if (searchTitle.includes((searchString.toUpperCase()))) {
+                    document.getElementById("card-list").insertAdjacentHTML('beforeend', temp_html);
+                }
             });
         });
 };
