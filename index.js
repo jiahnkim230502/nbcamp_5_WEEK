@@ -53,7 +53,7 @@ function search() {    // 검색 기능을 활성화 하기 위한 함수입니�
                 let vote_average = a['vote_average'];
                 let overview = a['overview'];
                 let id = a['id'];
-                let poster_path = "https://image.tmdb.org/t/p/w500" + a['poster_path']
+                let poster_path = "https://image.tmdb.org/t/p/w300" + a['poster_path']
                 let temp_html = `<div class = "movie-card">
                                 <div class="card-body" onclick = 'alert("영화 ID : ${id}")' >
                                     <img src="${poster_path}"
