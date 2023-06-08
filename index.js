@@ -44,7 +44,7 @@ function search() {    // 검색 기능을 활성화 하기 위한 함수입니�
         .then(response => response.json())
         .then(data => {
             let searchString = document.querySelector("#search-input").value // 문서의 id값 search-input을 찾아내어 값을 반환시킵니다.
-            let searchStr = searchString.toUpperCase();
+            let searchUpperStr = searchString.toUpperCase();
             let rows = data['results']
             document.getElementById("card-list").innerHTML = "" // 입력한 값에 대한 정보 값(card-list)을 제외하고 공백처리 하기 위한 것입니다.
             rows.forEach((a) => {
@@ -64,7 +64,7 @@ function search() {    // 검색 기능을 활성화 하기 위한 함수입니�
                                                     <p class="overview">${overview}</p>
                                 </div>`
                 // 문자열이 포함되어있으면 검색되도록 고도화 시켜 보세요~ (Issue #1)
-                if (searchTitle.includes(searchStr)) {
+                if (searchTitle.includes(searchUpperStr)) {
                     document.getElementById("card-list").insertAdjacentHTML('beforeend', temp_html);
                 }
             });
